@@ -9,7 +9,7 @@ double [] InitArray(int dimension)
     Random rnd = new Random();
     for (int i = 0; i < dimension; i++)
     {
-        array [i] = rnd.Next(0, 100);
+        array [i] = Math.Round(rnd.NextDouble() * 200 - 100, 2);
     }
     return array;
 }
@@ -34,5 +34,5 @@ Console.WriteLine(string.Join(", ", arr));
 (double min, double max) = FindMinMax(arr);
 Console.WriteLine($"Минимальный элемент массива = {min}");
 Console.WriteLine($"Максимальный элемент массива = {max}");
-double diff = Math.Abs(max - min);
+double diff = Math.Round(Math.Abs(max - min), 2);
 Console.WriteLine($"Разница между максимальным и минимальным элементом = {diff}");
